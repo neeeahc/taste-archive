@@ -1,0 +1,46 @@
+/* ═══ 3장 사진 판 — GRAS(gras.co) 메인 페이지 배치·동작(2026-10-27 학생 요청) · 동작은 gras.js ═══
+   검은 판 · 화면보다 넓은 격자(넓은 화면 150vw, 4칸 · 칸 사이 64px) · 사진은 원본 비율, 높이 = 화면 높이 30% · 올리면 나머지 어둡게 + 가운데 큰 이름 */
+.ph-spaces { background: #000; color: #fff; }
+.ph-spaces .ph-gnb { background: #000 !important; color: #fff; border-bottom-color: rgba(255, 255, 255, .35); }
+.ph-spaces #s4 > .ca-head { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }   /* 제목은 첫 동작 글자로 보이고, 여기서는 화면 읽기용 */
+.ph-spaces #s4 > .ca-track, .ph-spaces #s4 .ca-field { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }   /* 카드·흩뿌림 칸은 숨김(상세 열기용으로 남김) */
+.ph-spaces main > .ca-sec:first-child { margin-top: var(--ca-gnb-h); padding: 0; }
+.ph-spaces #s4.ca-scatter { display: block; }
+.gr-stage { position: relative; height: calc(100svh - var(--ca-gnb-h)); overflow: hidden; background: #000; isolation: isolate; }
+.gr-pan { position: absolute; left: 0; top: 0; will-change: transform; transform: scale(1.06); transition: transform 1.2s cubic-bezier(.2, .8, .2, 1); }
+.gr-stage.is-open .gr-pan { transition: none; }
+.gr-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 64px; width: 150vw; padding: 64px; box-sizing: border-box; }   /* 2026-10-27 학생 요청: 줄이기 전 크기·간격으로 되돌림 */
+.gr-cell { display: flex; justify-content: center; align-items: center; min-height: 30vh; }
+.gr-item { display: block; padding: 0; margin: 0; border: 0; background: none; cursor: pointer; transition: opacity .45s ease; }
+.gr-item img { display: block; height: 30vh; width: auto; max-width: 100%; object-fit: contain; }
+.gr-stage.is-hover .gr-item:not(.is-hot) { opacity: .28; }
+.gr-item:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+.gr-title { position: absolute; inset: 0; z-index: 2; display: grid; place-items: center; margin: 0; padding: 0 var(--ca-gut); text-align: center; pointer-events: none; color: #fff;
+  font: 400 clamp(32px, 4.2vw, 64px)/1.05 var(--ph-sans); letter-spacing: -0.035em; opacity: 0; transition: opacity .35s ease; }
+.gr-stage.is-hover .gr-title { opacity: 1; }
+.gr-intro { position: absolute; inset: 0; z-index: 3; display: grid; place-items: center; background: #fff; color: #000; font: 400 clamp(28px, 3vw, 44px)/1 var(--ph-sans); letter-spacing: -0.035em; transition: opacity .7s ease .1s, visibility 0s linear .8s; }
+.gr-stage.is-open .gr-intro { opacity: 0; visibility: hidden; }
+.gr-stage.is-touch { overflow: auto; -webkit-overflow-scrolling: touch; }
+.gr-stage.is-touch .gr-pan { position: relative; transform: none; }
+.ph-spaces .ph-next { margin-top: var(--ca-s3); }
+.ph-spaces .ph-next a, .ph-spaces .ca-bar-b { color: #fff; }
+.ph-spaces .ca-bar-b { background: #000 !important; border-top-color: rgba(255, 255, 255, .35); }
+@media (max-width: 768px) {
+  .gr-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; width: 160vw; padding: 32px; }
+  .gr-cell { min-height: 22vh; }
+  .gr-item img { height: 22vh; }
+}
+@media (prefers-reduced-motion: reduce) { .gr-pan, .gr-item, .gr-title, .gr-intro { transition: none; } }
+/* 스크롤 끝에 흰 빈 면이 보이던 것(2026-10-27 학생 보고): 페이지가 화면보다 짧을 때 맨 바깥(html) 바탕이 흰색으로 드러남 → 이 페이지는 바깥 바탕도 검정, 다음 장 링크 아래 여백을 줄임 */
+html:has(body.ph-spaces), body.ph-spaces { background: #000; }
+.ph-spaces main { background: #000; }
+.ph-spaces .ph-next { margin: var(--ca-s2) 0 calc(var(--ca-menu-h) + var(--ca-s2)); }
+/* 숨긴 카드 줄이 아래로 1,277px 늘어나 빈 검은 면이 스크롤되던 것: 숨김 크기를 강제(카드 자체는 상세 열기용으로 남김) */
+.ph-spaces #s4 > .ca-track, .ph-spaces #s4 .ca-field { width: 1px !important; height: 1px !important; min-height: 0 !important; max-height: 1px !important; overflow: hidden !important; clip-path: inset(50%) !important; left: 0; top: 0; }
+/* 스크롤하면 빈 화면이 나오던 것(2026-10-27 학생 재보고): GRAS처럼 3장은 스크롤 없는 한 화면으로 고정.
+   사진 판 = 위 바와 아래 바 사이 전체 · "다음 → Objects"는 판 아래쪽 가운데에 얹음 */
+html:has(body.ph-spaces), body.ph-spaces { height: 100%; overflow: hidden; }
+body.ph-spaces { padding-bottom: 0; }
+.ph-spaces .gr-stage { height: calc(100svh - var(--ca-gnb-h) - var(--ca-menu-h)); }
+.ph-spaces .ph-next { position: fixed; left: 0; right: 0; bottom: calc(var(--ca-menu-h) + 14px); z-index: 6; margin: 0; padding: 0; pointer-events: none; }
+.ph-spaces .ph-next a { pointer-events: auto; font-size: clamp(22px, 2.2vw, 32px); text-shadow: 0 2px 16px rgba(0, 0, 0, .6); }

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spaces — 이채은 — 나의 취향 아카이브</title>
+<meta name="description" content="컨셉을 UI로 번역하는 웹 디자이너 이채은">
+<meta property="og:type" content="website">
+<meta property="og:title" content="이채은 — 나의 취향 아카이브">
+<meta property="og:description" content="컨셉을 UI로 번역하는 웹 디자이너 이채은">
+<meta property="og:image" content="assets/Japan_01.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400&family=Noto+Serif+KR:wght@400;600&family=IBM+Plex+Mono:wght@400;600&family=Nanum+Gothic+Coding:wght@400;700&family=Jua&family=Gowun+Dodum&display=swap">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="style.css?v=1028l">
+<link rel="stylesheet" href="my-style.css?v=1028l">
+<link rel="stylesheet" href="phamilia.css?v=1028l">
+<link rel="stylesheet" href="gras.css?v=1028l">
+</head>
+<body class="ph-page ph-spaces">
+
+<!-- 상단 고정 바 — 왼쪽 사이트 제목 · 오른쪽 장 메뉴 다섯 칸(지금 장 칸만 아래 굵은 선, 그 밖의 선 없음). 첫 화면 사진 위에선 글자색을 사진 명도로(§I-6), 본문 위에선 바탕 면 88% + 흐림(§I-5) -->
+<header class="ca-gnb ph-gnb">
+  <div class="ca-gnb-row">
+    <p class="ca-gnb-name"><a href="index.html">이채은</a></p>
+    <nav class="ca-menu" aria-label="장">
+      <a href="gaze.html"><small class="ph-k" aria-hidden="true">1장 →</small>Gaze</a>
+      <a href="people.html"><small class="ph-k" aria-hidden="true">2장 →</small>People</a>
+      <a href="spaces.html" aria-current="page"><small class="ph-k" aria-hidden="true">3장 →</small>Spaces</a>
+      <a href="objects.html"><small class="ph-k" aria-hidden="true">4장 →</small>Objects</a>
+      <a href="criteria.html"><small class="ph-k" aria-hidden="true">기준 →</small>Criteria</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- ⑤ 3장 공간 — 왼쪽 공간 목록(이름 · 서브카피 · More) | 오른쪽 사진을 작은 정사각 칸에 흩어 둠(W07-B에서 이식). 칸 클릭 → 상세 -->
+  <section class="ca-sec" id="s4" aria-labelledby="s4-t">
+    <div class="ca-head ca-row"><h1 class="ca-label" id="s4-t">3장 공간</h1>
+    </div>
+    <!-- 3장 사진 판 — GRAS(gras.co) 메인 페이지의 배치·동작만 옮김(2026-10-27 학생 요청): 흰 화면에 이름이 떴다가 검은 판으로 열림 · 화면보다 넓은 격자에 사진을 원본 비율·같은 높이로 놓음 · 마우스를 움직이면 판이 반대로 천천히 따라 움직임 · 사진에 올리면 나머지가 어두워지고 공간 이름이 가운데 크게 · 누르면 그 공간 상세. 사진은 아래 카드(화면에서는 숨김)에서 gras.js가 읽는다 -->
+    <div class="gr-stage" role="region" aria-label="3장 공간 사진 판">
+      <div class="gr-intro" aria-hidden="true"><span>3장 공간</span></div>
+      <div class="gr-pan"><div class="gr-grid"></div></div>
+      <p class="gr-title" aria-live="polite"></p>
+    </div>
+    <div class="ca-track" data-scatter>
+      <article class="ca-card">
+        <div class="ca-cap"><h3 class="ca-name"><button class="ca-open" type="button">애정과 추억이 담긴 고향</button></h3>
+          <p class="ca-when">친구들과 사진 · 한강 산책</p>
+        </div>
+        <div class="ca-body">
+          <figure class="ca-fig"><img src="assets/Hometown_01.jpg" width="2000" height="1502" alt="3장 공간 애정과 추억이 담긴 고향 사진 1"><figcaption>겨울의 학교 운동장</figcaption></figure>
+          <figure class="ca-fig"><img src="assets/Hometown_02.jpg" width="1500" height="2000" alt="3장 공간 애정과 추억이 담긴 고향 사진 2"><figcaption>친구들과 졸업사진을 찍으러 간 올림픽공원</figcaption></figure>
+          <figure class="ca-fig"><img src="assets/Hometown_03.jpg" width="1081" height="1440" alt="3장 공간 애정과 추억이 담긴 고향 사진 3"><figcaption>졸업사진 찍으러 나온 학교 운동장</figcaption></figure>
+          <figure class="ca-fig"><img src="assets/Hometown_04.jpg" width="1500" height="2000" alt="3장 공간 애정과 추억이 담긴 고향 사진 4"><figcaption>집 앞 한강 가는 길</figcaption></figure>
+          <figure class="ca-fig"><img src="assets/Hometown_05.jpg" width="1500" height="2000" alt="3장 공간 애정과 추억이 담긴 고향 사진 5"><figcaption>집 앞 한강</figcaption></figure>
+          <figure class="ca-fig"><img src="assets/Hometown_06.jpg" width="2000" height="1500" alt="3장 공간 애정과 추억이 담긴 고향 사진 6"><figcaption>쿠키사진</figcaption></figure>
+          <p class="ca-why">모든 일이 끝나고 쉬러 갈 때
+          인생의 대부분을 보낸 곳</p>
+        </div>
+      </article>
+      <article class="ca-card">
+        <div class="ca-cap"><h3 class="ca-name"><button class="ca-open" type="button">가장 멀리 가 본 여행지</button></h3>
+          <p class="ca-when">여행 즐기기</p>
+        </div>
+        <div class="ca-body">
+          <figure class="ca-fig"><img src="assets/Japan_01.jpg" width="1500" height="2000" alt="3장 공간 가장 멀리 가 본 여행지 사진 1"><figcaption>절</figcaption></figure>
+          <figure class="ca-fig"><img src="assets/Japan_02.jpg" width="1280" height="1706" alt="3장 공간 가장 멀리 가 본 여행지 사진 2"><figcaption>도쿄 스카이라이너</figcaption></figure>
+          <figure class="ca-fig"><img src="assets/Japan_03.jpg" width="2000" height="1500" alt="3장 공간 가장 멀리 가 본 여행지 사진 3"><figcaption>도쿄 스카이라이너</figcaption></figure>
+          <figure class="ca-fig"><img src="assets/Japan_04.jpg" width="1500" height="2000" alt="3장 공간 가장 멀리 가 본 여행지 사진 4"><figcaption>가마쿠라</figcaption></figure>
+          <figure class="ca-fig"><img src="assets/Japan_05.jpg" width="1500" height="2000" alt="3장 공간 가장 멀리 가 본 여행지 사진 5"><figcaption>도쿄 디즈니랜드</figcaption></figure>
+          <p class="ca-why">시간 여유 · 좋은 날씨가 찾아올 때
+          아직 가 보지 못한 나라들</p>
+        </div>
+      </article>
+      <article class="ca-card">
+        <div class="ca-cap"><h3 class="ca-name"><button class="ca-open" type="button">내가 좋아하는 공간</button></h3>
+          <p class="ca-when">물고기 구경</p>
+        </div>
+        <div class="ca-body">
+          <figure class="ca-fig"><img src="assets/Aquarium_01.jpg" width="1500" height="2000" alt="3장 공간 내가 좋아하는 공간 사진 1"><figcaption>어둠 속 둥근 어항</figcaption></figure>
+          <figure class="ca-fig"><img src="assets/Aquarium_02.jpg" width="1500" height="2000" alt="3장 공간 내가 좋아하는 공간 사진 2"><figcaption>창살 그림자 아래 금붕어 수조</figcaption></figure>
+          <figure class="ca-fig"><img src="assets/Aquarium_03.jpg" width="1500" height="2000" alt="3장 공간 내가 좋아하는 공간 사진 3"><figcaption>그림자를 끌고 가는 금붕어</figcaption></figure>
+          <figure class="ca-fig"><img src="assets/Aquarium_04.jpg" width="1500" height="2000" alt="3장 공간 내가 좋아하는 공간 사진 4"><figcaption>붉은 빛 속 큰 어항</figcaption></figure>
+          <figure class="ca-fig"><img src="assets/Aquarium_05.jpg" width="1500" height="2000" alt="3장 공간 내가 좋아하는 공간 사진 5"><figcaption>어항 가득한 금붕어</figcaption></figure>
+          <p class="ca-why">리프레시가 필요할 때
+          잡생각이 사라지는 곳</p>
+        </div>
+      </article>
+    </div>
+  </section>
+  <nav class="ph-next" aria-label="다음 장"><a href="objects.html"><small class="ph-k" aria-hidden="true">다음 →</small>Objects</a></nav>
+</main>
+
+<!-- 하단 고정 바 — ©연도만. Email · Instagram 칸은 지움(공개 주소라 연락처를 싣지 않음 — 넣고 싶다고 말하면 넣는다) -->
+<footer class="ca-bar-b">
+  <p class="ca-gnb-c" lang="en">©2026</p>
+</footer>
+
+<script src="sig.js?v=1028l"></script>
+<script src="phamilia.js?v=1028l"></script>
+<script src="gras.js?v=1028l"></script>
+</body>
+</html>

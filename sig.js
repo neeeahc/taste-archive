@@ -153,6 +153,8 @@
   }
   var gName = gnb && $('.ca-gnb-name a', gnb);
   if (gName) gName.addEventListener('click', function (e) {   /* 이름 = 메인(첫 화면)으로 — 상세가 열려 있으면 닫고 맨 위로 (2026-10-07 교수 지시) */
+    var hr = gName.getAttribute('href') || '';
+    if (hr && hr.charAt(0) !== '#' && !document.body.classList.contains('ph-home')) return;   /* 여러 페이지 구조(2026-10-27): 장 페이지에서는 링크대로 첫 화면(index.html)으로 이동 */
     e.preventDefault();
     if (detailOn) closeDetail();
     var wasOpen = detailOn;

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gaze — 이채은 — 나의 취향 아카이브</title>
+<meta name="description" content="컨셉을 UI로 번역하는 웹 디자이너 이채은">
+<meta property="og:type" content="website">
+<meta property="og:title" content="이채은 — 나의 취향 아카이브">
+<meta property="og:description" content="컨셉을 UI로 번역하는 웹 디자이너 이채은">
+<meta property="og:image" content="assets/Japan_01.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400&family=Noto+Serif+KR:wght@400;600&family=IBM+Plex+Mono:wght@400;600&family=Nanum+Gothic+Coding:wght@400;700&family=Jua&family=Gowun+Dodum&display=swap">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="style.css?v=1028l">
+<link rel="stylesheet" href="my-style.css?v=1028l">
+<link rel="stylesheet" href="phamilia.css?v=1028l">
+</head>
+<body class="ph-page ph-gaze">
+
+<!-- 상단 고정 바 — 왼쪽 사이트 제목 · 오른쪽 장 메뉴 다섯 칸(지금 장 칸만 아래 굵은 선, 그 밖의 선 없음). 첫 화면 사진 위에선 글자색을 사진 명도로(§I-6), 본문 위에선 바탕 면 88% + 흐림(§I-5) -->
+<header class="ca-gnb ph-gnb">
+  <div class="ca-gnb-row">
+    <p class="ca-gnb-name"><a href="index.html">이채은</a></p>
+    <nav class="ca-menu" aria-label="장">
+      <a href="gaze.html" aria-current="page"><small class="ph-k" aria-hidden="true">1장 →</small>Gaze</a>
+      <a href="people.html"><small class="ph-k" aria-hidden="true">2장 →</small>People</a>
+      <a href="spaces.html"><small class="ph-k" aria-hidden="true">3장 →</small>Spaces</a>
+      <a href="objects.html"><small class="ph-k" aria-hidden="true">4장 →</small>Objects</a>
+      <a href="criteria.html"><small class="ph-k" aria-hidden="true">기준 →</small>Criteria</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- ③ 1장 시선 — 카드 줄: 묶음마다 카드 하나(사진 최대 5장, 카드엔 2장). 연 카드 하나만 3열로 -->
+  <section class="ca-sec" id="s2" aria-labelledby="s2-t">
+    <div class="ca-head ca-row"><h1 class="ca-label" id="s2-t">1장 시선</h1>
+      <p class="ca-lead">동경하는 풍경 · 나의 버킷리스트 · 다양함</p>
+    </div>
+    <!-- 1장 사진 줄 — Jacky Winter Gallery(jackywinter.gallery) 메인 상단의 배치·동작만 옮김(2026-10-27 학생 요청 · 카드 줄을 대신함): 작은 사진 한 장이 가운데에서 커지며 펼쳐짐 · 4:5 사진이 오른쪽으로 점점 작아지며 겹침 · 오른쪽 사진을 누르면 앞 장이 왼쪽으로 빠지고 그 장이 커짐 · 지금 사진을 누르면 그 묶음 상세가 열림. 사진은 아래 카드(화면에서는 숨김)에서 jw.js가 읽는다 -->
+    <div class="jw-stage" role="region" aria-roledescription="carousel" aria-label="1장 시선 사진 넘겨 보기" tabindex="0">
+      <div class="jw-track"></div>
+      <!-- 사진 설명 — Jacky Winter 사진 아래 검은 설명판 배치(2026-10-27 학생 요청): 지금 사진 바로 아래, 같은 너비. 이름(굵게) · 작가 · 사이트와 번호 | 오른쪽 태그 알약 · ↗(상세 열기). 이름은 figure의 data-title -->
+      <div class="jw-cap" aria-live="polite">
+        <div class="jw-cap-t"><p class="jw-title"></p><p class="jw-who"></p><p class="jw-meta"></p></div>
+        <div class="jw-cap-r"><span class="jw-tag"></span><button type="button" class="jw-go" aria-label="이 묶음 자세히 보기">↗</button></div>
+      </div>
+    </div>
+    <div class="ca-track">
+      <article class="ca-card">
+        <div class="ca-cap"><h3 class="ca-name"><button class="ca-open" type="button">하늘</button></h3>
+        </div>
+        <div class="ca-body">
+          <figure class="ca-fig" data-title="일몰에서 받은 영감"><img src="assets/w04_sky03_pexels_maczkogabor.jpg" width="1333" height="2000" alt="1장 시선 하늘 사진 1"></figure>
+          <figure class="ca-fig" data-title="일몰에서 받은 영감"><img src="assets/w04_sky01_unsplash_jordansteranka.jpg" width="1333" height="2000" alt="1장 시선 하늘 사진 2"></figure>
+          <figure class="ca-fig" data-title="일몰에서 받은 영감"><img src="assets/w04_sky02_pexels_danielflores.jpg" width="1126" height="2000" alt="1장 시선 하늘 사진 3"></figure>
+          <figure class="ca-fig" data-title="일몰에서 받은 영감"><img src="assets/w04_sky04_pexels_saifeeart.jpg" width="1333" height="2000" alt="1장 시선 하늘 사진 4"></figure>
+          <figure class="ca-fig" data-title="일몰에서 받은 영감"><img src="assets/w04_sky05_pexels_zaktech90.jpg" width="2000" height="1333" alt="1장 시선 하늘 사진 5"></figure>
+          <p class="ca-why">일몰에서 받은 영감</p>
+        </div>
+      </article>
+      <article class="ca-card">
+        <div class="ca-cap"><h3 class="ca-name"><button class="ca-open" type="button">손</button></h3>
+        </div>
+        <div class="ca-body">
+          <figure class="ca-fig" data-title="혼자인 손 · 아티스틱한 손"><img src="assets/w04_hand05_unsplash_osarugueigbinoba.jpg" width="1333" height="2000" alt="1장 시선 손 사진 1"></figure>
+          <figure class="ca-fig" data-title="혼자인 손 · 아티스틱한 손"><img src="assets/w04_hand01_unsplash_alexandereriksson.jpg" width="1333" height="2000" alt="1장 시선 손 사진 2"></figure>
+          <figure class="ca-fig" data-title="혼자인 손 · 아티스틱한 손"><img src="assets/w04_hand02_unsplash_davidbanjo.jpg" width="1534" height="2000" alt="1장 시선 손 사진 3"></figure>
+          <figure class="ca-fig" data-title="혼자인 손 · 아티스틱한 손"><img src="assets/w04_hand03_unsplash_dwaynejoe.jpg" width="1600" height="2000" alt="1장 시선 손 사진 4"></figure>
+          <figure class="ca-fig" data-title="혼자인 손 · 아티스틱한 손"><img src="assets/w04_hand04_unsplash_maxovcharenko.jpg" width="1600" height="2000" alt="1장 시선 손 사진 5"></figure>
+          <p class="ca-why">혼자인 손 · 아티스틱한 손 — 네일아트, 플래시 흑백 사진</p>
+        </div>
+      </article>
+      <article class="ca-card">
+        <div class="ca-cap"><h3 class="ca-name"><button class="ca-open" type="button">길</button></h3>
+        </div>
+        <div class="ca-body">
+          <figure class="ca-fig" data-title="붐비는 길 · 전통의 길 · 가 보고 싶은 길"><img src="assets/w04_road02_unsplash_kostiantyntrundaiev.jpg" width="2000" height="1778" alt="1장 시선 길 사진 1"></figure>
+          <figure class="ca-fig" data-title="붐비는 길 · 전통의 길 · 가 보고 싶은 길"><img src="assets/w04_road01_unsplash_hectorjrivas.jpg" width="1333" height="2000" alt="1장 시선 길 사진 2"></figure>
+          <figure class="ca-fig" data-title="붐비는 길 · 전통의 길 · 가 보고 싶은 길"><img src="assets/w04_road03_unsplash_mossukjaroenkraisri.jpg" width="2000" height="1250" alt="1장 시선 길 사진 3"></figure>
+          <figure class="ca-fig" data-title="붐비는 길 · 전통의 길 · 가 보고 싶은 길"><img src="assets/w04_road04_unsplash_yiranding.jpg" width="1600" height="2000" alt="1장 시선 길 사진 4"></figure>
+          <figure class="ca-fig" data-title="붐비는 길 · 전통의 길 · 가 보고 싶은 길"><img src="assets/w04_road05_unsplash_zionc.jpg" width="2000" height="1333" alt="1장 시선 길 사진 5"></figure>
+          <p class="ca-why">붐비는 여행지의 길 · 나라 고유의 전통 길 · 가 보고 싶은 길</p>
+        </div>
+      </article>
+    </div>
+  </section>
+  <nav class="ph-next" aria-label="다음 장"><a href="people.html"><small class="ph-k" aria-hidden="true">다음 →</small>People</a></nav>
+</main>
+
+<!-- 하단 고정 바 — ©연도만. Email · Instagram 칸은 지움(공개 주소라 연락처를 싣지 않음 — 넣고 싶다고 말하면 넣는다) -->
+<footer class="ca-bar-b">
+  <p class="ca-gnb-c" lang="en">©2026</p>
+</footer>
+
+<script src="sig.js?v=1028l"></script>
+<script src="phamilia.js?v=1028l"></script>
+<script src="jw.js?v=1028l"></script>
+</body>
+</html>

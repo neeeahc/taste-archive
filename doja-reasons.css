@@ -1,0 +1,86 @@
+/* ═══ 2장 이유 세 가지 — 5주 사이트(weeks/05/site)의 이유 세 가지 구역 스타일을 그대로 옮김(2026-10-27 학생 요청) ═══
+   영상(assets/reasons_mv.mp4)이 화면에 고정된 채, 스크롤할 때마다 이유 문장이 한 장면씩 바뀐다(dj-captions.js · dj-mv.js).
+   5주 토큰 중 이 구역이 쓰는 값만 여기서 다시 정의한다 */
+.kb-tour { --kb-u: calc(clamp(992px, 100vw, 2560px) / 120); --kb-pad-x: calc(var(--kb-u) * .625); --doja-dark-red: #6B0A0E; --doja-light-red: #FFB3B0; }
+@media (max-width: 991px) { .kb-tour { --kb-u: calc(clamp(768px, 100vw, 991px) / 87.5); } }
+@media (max-width: 767px) { .kb-tour { --kb-u: calc(clamp(480px, 100vw, 767px) / 43.75); } }
+@media (max-width: 479px) { .kb-tour { --kb-u: calc(clamp(320px, 100vw, 479px) / 24.375); } }
+.kb-tour .kb-label { display: flex; align-items: center; gap: .4em; color: #fff; font: 500 clamp(18px, 1.6vw, 26px)/1.2 var(--ph-body, "Pretendard Variable", sans-serif); letter-spacing: -.02em; }
+.kb-sq { width: .75em; aspect-ratio: 1; background: currentColor; flex: 0 0 auto; }
+.ph-people main > .kb-tour { margin-top: var(--ca-s3); }
+section.kb-tour {
+  background: var(--doja-dark-red); color: #FFFFFF;
+  --kb-plane: var(--doja-dark-red); --kb-dim: var(--doja-light-red);
+}
+html.js .kb-tour-fig img { filter: none; mix-blend-mode: normal; }
+/* 이유 세 가지 — 스크롤 프레젠테이션(한화 사이트처럼, dj-captions.js).
+   섹션은 (장면 수 + 0.5) × 화면 높이만큼 길고, 그 안의 화면(.dj-tour-pin)이 영상과 함께 고정(sticky)된 채 문장만 바뀐다 */
+section.kb-tour { position: relative; display: block; padding: 0; width: 100%; height: calc((var(--dj-steps, 4) + .5) * 100svh);
+  background: #000; isolation: isolate; }
+.dj-tour-pin { position: sticky; top: 0; height: 100svh; overflow: hidden; }
+.kb-tour .dj-mv { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; margin: 0; background: #000; pointer-events: none; }
+.dj-tour-shade { position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(180deg, rgba(0, 0, 0, .25), rgba(0, 0, 0, .55)); }
+.dj-tour-pin .kb-label { position: absolute; z-index: 3; top: calc(var(--kb-u) * 1.2); left: var(--kb-pad-x); margin: 0; }
+.dj-tour-pin .dj-cap-stage { z-index: 2; }
+.dj-mv::-webkit-media-controls-start-playback-button,
+.dj-mv::-webkit-media-controls-overlay-play-button,
+.dj-mv::-webkit-media-controls { display: none !important; -webkit-appearance: none; }   /* Safari의 가운데 ▶ 표시 숨김 */
+
+/* 이유 세 가지 — 장면 문장(dj-captions.js). 표는 화면에서만 숨기고 화면 읽기 도구용으로 남긴다 */
+.kb-tour .kb-table { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.dj-cap-stage { position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none; padding: 0 6vw; }
+.dj-cap { grid-area: 1 / 1; max-width: min(1180px, 88vw); text-align: center; color: #FFFFFF; visibility: hidden;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, .45); }
+.dj-cap.is-on, .dj-cap.is-out { visibility: visible; }
+/* ① 번호 줄 — 작게, 넓은 자간 */
+.dj-cap-no { margin: 0 0 1.6em; font-family: "Pretendard Variable", sans-serif; font-size: clamp(11px, .9vw, 14px);
+  font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: #FFFFFF;
+  opacity: 0; transform: translateY(8px); transition: opacity .6s ease, transform .8s cubic-bezier(.2, .8, .2, 1); }
+.dj-cap.is-on .dj-cap-no { opacity: 1; transform: none; }
+/* ② 큰 문장 — 단어가 흐릿하게 아래에서 미끄러져 들어와 선명해진다. 자막 글꼴·색은 모두 흰색 Pretendard로 통일 */
+.dj-cap-big { margin: 0; font-family: "Pretendard Variable", sans-serif; font-weight: 800; letter-spacing: -.03em;
+  font-size: clamp(34px, 5.4vw, 92px); line-height: 1.12; word-break: keep-all; }
+.dj-cap-big em { font-family: inherit; font-style: normal; font-weight: inherit; letter-spacing: inherit; color: inherit; }   /* 글꼴·색 모두 통일(학생 요청) */
+.dj-w { display: inline-block; opacity: 0; filter: blur(14px); transform: translateY(.45em) scale(1.04); }
+.dj-cap.is-on .dj-w { opacity: 1; filter: blur(0); transform: none;
+  transition: opacity .7s ease, filter .9s ease, transform 1s cubic-bezier(.2, .8, .2, 1); transition-delay: calc(.25s + var(--i) * .11s); }
+.dj-cap.is-out .dj-w { opacity: 0; filter: blur(18px); transform: translateX(-.5em) scaleX(1.08);   /* 옆으로 흐려지며 빠진다 */
+  transition: opacity .5s ease, filter .5s ease, transform .6s cubic-bezier(.6, 0, .8, .2); transition-delay: calc(var(--i) * .03s); }
+/* ③ 설명 줄 — 한화식 줄 가림: 줄마다 아래에서 위로 드러난다 */
+.dj-cap-sub { margin: 1.6em auto 0; max-width: 46em; font-family: "Pretendard Variable", sans-serif; font-weight: 500;
+  font-size: clamp(14px, 1.25vw, 20px); line-height: 1.6; color: #FFFFFF; word-break: keep-all; }
+.dj-line { display: block; overflow: hidden; }
+.dj-line > span { display: block; transform: translateY(105%); }
+.dj-cap.is-on .dj-line > span { transform: none; transition: transform 1s cubic-bezier(.2, .8, .2, 1);
+  transition-delay: calc(.6s + var(--n) * .11s + var(--j) * .14s); }
+.dj-cap.is-out .dj-line > span { transform: translateY(-105%); transition: transform .5s cubic-bezier(.6, 0, .8, .2); }
+/* ④ 근거 링크 */
+.dj-cap-src { display: inline-block; margin-top: 2.2em; pointer-events: auto; font-family: "Pretendard Variable", sans-serif;
+  font-size: 12px; letter-spacing: .04em; color: #FFFFFF; text-decoration: none; border-bottom: 1px solid #FFFFFF;
+  opacity: 0; transition: opacity .6s ease, color .2s; }
+.dj-cap.is-on .dj-cap-src { opacity: 1; transition-delay: calc(1.2s + var(--n) * .11s); }
+.dj-cap-src:hover { color: #FFFFFF; }
+/* 마지막 — 키워드 세 줄을 한화처럼 계단으로: 줄마다 정확히 2em씩 들여쓴다(학생 요청: 애매한 정렬 대신 단을 분명히) */
+.dj-cap-stairs { display: inline-block; text-align: left; }   /* 덩어리는 가운데, 줄은 왼쪽 정렬 */
+.dj-cap-stairs > span { display: block; }
+.dj-cap-stairs > span:nth-child(2) { margin-left: 2em; }    /* 한 단씩 같은 폭으로 내려 쌓는 계단 */
+.dj-cap-stairs > span:nth-child(3) { margin-left: 4em; }
+/* 진행 막대 — 지난 장면은 다 차고, 지금 장면은 스크롤한 만큼 찬다. 누르면 그 장면으로 */
+.dj-cap-progress { position: absolute; left: 50%; bottom: clamp(18px, 3vw, 40px); translate: -50% 0; display: flex; gap: 6px; }
+.dj-cap-progress { pointer-events: auto; }
+.dj-cap-progress button { display: block; padding: 12px 0; margin: 0; border: 0; background: none; cursor: pointer; }   /* 누르기 쉽게 위아래 여유 */
+.dj-cap-progress i { display: block; position: relative; width: 36px; height: 2px; background: rgba(255, 255, 255, .25); overflow: hidden; transition: background .2s; }
+.dj-cap-progress button:hover i { background: rgba(255, 255, 255, .55); }
+.dj-cap-progress i::after { content: ""; position: absolute; inset: 0; background: #FFFFFF; transform: scaleX(var(--p, 0)); transform-origin: left; }   /* 스크롤한 만큼 찬다 */
+@media (prefers-reduced-motion: reduce) {
+  .dj-w, .dj-line > span, .dj-cap-no, .dj-cap-src { transition: none !important; filter: none !important; }
+}
+
+/* 표 괘선 — 흰 선 30% (65% → 30%: 선이 물러나 글자가 먼저 읽히게) */
+.kb-tour .kb-rows { border-top-color: rgba(255, 255, 255, .3); }
+.kb-tour .kb-row { border-bottom-color: rgba(255, 255, 255, .3); }
+
+/* 이 사이트에 맞춘 두 줄(2026-10-27): 고정 화면이 위 바 아래에서 시작 · 카드 줄을 뺀 2장 머리는 가운데 한 줄 */
+.ph-people .dj-tour-pin { top: var(--ca-gnb-h); height: calc(100svh - var(--ca-gnb-h)); }
+.ph-people #s3.ca-split { display: block; }
+.ph-people #s3.ca-split > .ca-head { display: block; width: 100%; max-width: none; text-align: center; }

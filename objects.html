@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Objects — 이채은 — 나의 취향 아카이브</title>
+<meta name="description" content="컨셉을 UI로 번역하는 웹 디자이너 이채은">
+<meta property="og:type" content="website">
+<meta property="og:title" content="이채은 — 나의 취향 아카이브">
+<meta property="og:description" content="컨셉을 UI로 번역하는 웹 디자이너 이채은">
+<meta property="og:image" content="assets/Japan_01.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400&family=Noto+Serif+KR:wght@400;600&family=IBM+Plex+Mono:wght@400;600&family=Nanum+Gothic+Coding:wght@400;700&family=Jua&family=Gowun+Dodum&display=swap">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="style.css?v=1028l">
+<link rel="stylesheet" href="my-style.css?v=1028l">
+<link rel="stylesheet" href="phamilia.css?v=1028l">
+<link rel="stylesheet" href="yh.css?v=1028l">
+</head>
+<body class="ph-page ph-objects">
+
+<!-- 상단 고정 바 — 왼쪽 사이트 제목 · 오른쪽 장 메뉴 다섯 칸(지금 장 칸만 아래 굵은 선, 그 밖의 선 없음). 첫 화면 사진 위에선 글자색을 사진 명도로(§I-6), 본문 위에선 바탕 면 88% + 흐림(§I-5) -->
+<header class="ca-gnb ph-gnb">
+  <div class="ca-gnb-row">
+    <p class="ca-gnb-name"><a href="index.html">이채은</a></p>
+    <nav class="ca-menu" aria-label="장">
+      <a href="gaze.html"><small class="ph-k" aria-hidden="true">1장 →</small>Gaze</a>
+      <a href="people.html"><small class="ph-k" aria-hidden="true">2장 →</small>People</a>
+      <a href="spaces.html"><small class="ph-k" aria-hidden="true">3장 →</small>Spaces</a>
+      <a href="objects.html" aria-current="page"><small class="ph-k" aria-hidden="true">4장 →</small>Objects</a>
+      <a href="criteria.html"><small class="ph-k" aria-hidden="true">기준 →</small>Criteria</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- ⑥ 4장 물건 — 번호 줄(장 머리 안) + 카드 줄(7주 부품 v1 동작 그대로) -->
+  <section class="ca-sec" id="s5" aria-labelledby="s5-t">
+    <div class="ca-head ca-row"><h1 class="ca-label" id="s5-t">4장 물건</h1>
+    </div>
+    <!-- 4장 물건 판 — Yaheng Li(yahengli.co) 메인의 배치·동작만 옮김(2026-10-27 학생 요청): 옅은 회색 판 · 오른쪽 엇갈린 격자에 누끼 물건 사진 + 작은 고정폭 라벨 "OBJECT 01 | 이름" · 올리면 다른 사진으로 바뀜 · 누르면 그 물건 상세. 사진·이름은 아래 카드(화면에서는 숨김)에서 yh.js가 읽는다 -->
+    <div class="yh-wrap">
+      <div class="yh-grid"></div>
+    </div>
+    <div class="ca-track" data-index>
+      <article class="ca-card" data-3d-front="assets/obj1_01.png" data-3d-depth="0.02">
+        <div class="ca-cap"><h3 class="ca-name"><button class="ca-open" type="button">BYTP PHOTOFILM</button></h3>
+          <p class="ca-when">추억을 감상할 때</p>
+        </div>
+        <div class="ca-body">
+          <figure class="ca-fig"><img src="assets/obj1_01.png" width="1195" height="2426" alt="4장 물건 BYTP PHOTOFILM 사진 1"><figcaption>친구들과 우정사진</figcaption></figure>
+          <p class="ca-why">특이한 테마의 포토필름</p>
+        </div>
+      </article>
+      <article class="ca-card" data-no-swap data-3d-front="assets/obj2_03.png" data-3d-depth="0.16"><!-- 4장 판: 올리면 다른 사진으로 바꾸지 않고 이 썸네일 그대로 기울임(2026-10-27 학생 요청) -->
+        <div class="ca-cap"><h3 class="ca-name"><button class="ca-open" type="button">LIPGLOSS</button></h3>
+          <p class="ca-when">메이크업할 때</p>
+        </div>
+        <div class="ca-body">
+          <figure class="ca-fig" data-thumb-only><img src="assets/obj2_03.png" width="1358" height="1564" alt="4장 물건 LIPGLOSS 사진 1"><figcaption>착둥이 글로스</figcaption></figure>
+          <figure class="ca-fig"><img src="assets/obj2_01.png" width="689" height="1119" alt="4장 물건 LIPGLOSS 사진 2"><figcaption>착둥이 글로스</figcaption></figure>
+          <figure class="ca-fig"><img src="assets/obj2_02.png" width="1125" height="1374" alt="4장 물건 LIPGLOSS 사진 3"><figcaption>착둥이 글로스</figcaption></figure>
+          <p class="ca-why">예쁜 누디톤 색감</p>
+        </div>
+      </article>
+      <article class="ca-card" data-3d-front="assets/obj3_01.png" data-3d-depth="0.14">
+        <div class="ca-cap"><h3 class="ca-name"><button class="ca-open" type="button">SALOME LIGHTER</button></h3>
+          <p class="ca-when">불을 붙여야 할 때</p>
+        </div>
+        <div class="ca-body">
+          <figure class="ca-fig"><img src="assets/obj3_01.png" width="1191" height="1187" alt="4장 물건 SALOME LIGHTER 사진 1"><figcaption>살로메사장님 웰메이드</figcaption></figure>
+          <p class="ca-why">좋아하는 빈티지 가게에서 받은 선물</p>
+        </div>
+      </article>
+      <article class="ca-card" data-3d-front="assets/obj4_01.png" data-3d-depth="0.22">
+        <div class="ca-cap"><h3 class="ca-name"><button class="ca-open" type="button">BUDDHA COIN PURSE</button></h3>
+          <p class="ca-when">동전을 필요로 할 때</p>
+        </div>
+        <div class="ca-body">
+          <figure class="ca-fig"><img src="assets/obj4_01.png" width="1612" height="1824" alt="4장 물건 BUDDHA COIN PURSE 사진 1"><figcaption>묘루지 절의 부처</figcaption></figure>
+          <p class="ca-why">일본 여행에서 산 동전지갑</p>
+        </div>
+      </article>
+      <article class="ca-card" data-3d-front="assets/obj5_01.png" data-3d-back="assets/obj5_02.png" data-3d-depth="0.015">
+        <div class="ca-cap"><h3 class="ca-name"><button class="ca-open" type="button">PEACE OR PEACE FAN</button></h3>
+          <p class="ca-when">더울 때</p>
+        </div>
+        <div class="ca-body">
+          <figure class="ca-fig" data-thumb-only><img src="assets/obj5_03.png" width="2000" height="1449" alt="4장 물건 PEACE OR PEACE FAN 사진 1"><figcaption>전주 평화와 평화</figcaption></figure>
+          <figure class="ca-fig"><img src="assets/obj5_01.png" width="2205" height="2177" alt="4장 물건 PEACE OR PEACE FAN 사진 2"><figcaption>전주 평화와 평화</figcaption></figure>
+          <figure class="ca-fig"><img src="assets/obj5_02.png" width="2205" height="2161" alt="4장 물건 PEACE OR PEACE FAN 사진 3"><figcaption>전주 평화와 평화</figcaption></figure>
+          <p class="ca-why">하나뿐인 부채</p>
+        </div>
+      </article>
+    </div>
+  </section>
+  <nav class="ph-next" aria-label="다음 장"><a href="criteria.html"><small class="ph-k" aria-hidden="true">다음 →</small>Criteria</a></nav>
+</main>
+
+<!-- 하단 고정 바 — ©연도만. Email · Instagram 칸은 지움(공개 주소라 연락처를 싣지 않음 — 넣고 싶다고 말하면 넣는다) -->
+<footer class="ca-bar-b">
+  <p class="ca-gnb-c" lang="en">©2026</p>
+</footer>
+
+<script src="sig.js?v=1028l"></script>
+<script src="phamilia.js?v=1028l"></script>
+<script src="yh.js?v=1028l"></script>
+<script src="obj3d.js?v=1028l"></script>
+</body>
+</html>

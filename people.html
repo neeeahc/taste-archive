@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>People — 이채은 — 나의 취향 아카이브</title>
+<meta name="description" content="컨셉을 UI로 번역하는 웹 디자이너 이채은">
+<meta property="og:type" content="website">
+<meta property="og:title" content="이채은 — 나의 취향 아카이브">
+<meta property="og:description" content="컨셉을 UI로 번역하는 웹 디자이너 이채은">
+<meta property="og:image" content="assets/Japan_01.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400&family=Noto+Serif+KR:wght@400;600&family=IBM+Plex+Mono:wght@400;600&family=Nanum+Gothic+Coding:wght@400;700&family=Jua&family=Gowun+Dodum&display=swap">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="style.css?v=1028l">
+<link rel="stylesheet" href="my-style.css?v=1028l">
+<link rel="stylesheet" href="phamilia.css?v=1028l">
+<link rel="stylesheet" href="doja-reasons.css?v=1028l">
+</head>
+<body class="ph-page ph-people">
+
+<!-- 상단 고정 바 — 왼쪽 사이트 제목 · 오른쪽 장 메뉴 다섯 칸(지금 장 칸만 아래 굵은 선, 그 밖의 선 없음). 첫 화면 사진 위에선 글자색을 사진 명도로(§I-6), 본문 위에선 바탕 면 88% + 흐림(§I-5) -->
+<header class="ca-gnb ph-gnb">
+  <div class="ca-gnb-row">
+    <p class="ca-gnb-name"><a href="index.html">이채은</a></p>
+    <nav class="ca-menu" aria-label="장">
+      <a href="gaze.html"><small class="ph-k" aria-hidden="true">1장 →</small>Gaze</a>
+      <a href="people.html" aria-current="page"><small class="ph-k" aria-hidden="true">2장 →</small>People</a>
+      <a href="spaces.html"><small class="ph-k" aria-hidden="true">3장 →</small>Spaces</a>
+      <a href="objects.html"><small class="ph-k" aria-hidden="true">4장 →</small>Objects</a>
+      <a href="criteria.html"><small class="ph-k" aria-hidden="true">기준 →</small>Criteria</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  
+
+<!-- ④ 2장 사람 — 12단: 왼쪽 4단 = 장 이름 · 큰 문장(소개 글 삭제) | 오른쪽 6단 = 이유 카드 셋(사진 3단 | 글 3단) -->
+  <section class="ca-sec ca-split" id="s3" aria-labelledby="s3-t">
+    <div class="ca-head ca-row"><h1 class="ca-label" id="s3-t">2장 사람 · Doja Cat</h1>
+      <p class="ca-lead">도자캣만의 컨셉과 음악 · 논란에도 기세를 끝까지 지키는 예술가의 태도</p>
+    </div>
+  </section>
+
+  <!-- 2장 이유 세 가지 — 5주 사이트(weeks/05/site/index.html)의 이유 세 가지 구역을 그대로 가져옴(2026-10-27 학생 요청). 원래 주석: — 투어 일정 표. 행 = 이유, 열 = 번호 | 이유 | 본 것(+해석) | 근거. 색 면: 옅은 포인트 -->
+  <section class="kb-tour" id="reasons" data-plane="soft" aria-label="이유 세 가지">
+    <!-- [커스텀] 스크롤 프레젠테이션(한화 사이트처럼) — 영상 화면은 고정(sticky)된 채로, 스크롤을 내릴 때마다 문장이 한 장면씩 바뀐다.
+         문장은 학생 요청으로 Claude가 프레젠테이션 문구로 다듬은 초안 · 큰 문장의 <em>은 강조어 표시(글꼴·색은 통일) · 문구를 고치려면 이 안의 글만 바꾸면 된다 -->
+    <div class="dj-tour-pin">
+      <video class="dj-mv" src="assets/reasons_mv.mp4" autoplay muted loop playsinline preload="auto" aria-label="도자캣 뮤직비디오 장면"></video>
+      <div class="dj-tour-shade" aria-hidden="true"></div>
+      <div class="dj-cap-stage">
+        <article class="dj-cap" aria-hidden="true">
+          <p class="dj-cap-no">Reason 01 — 컨셉과 음악</p>
+          <p class="dj-cap-big">악마마저 <em>자기 것으로</em> 입는 아티스트</p>
+          <p class="dj-cap-sub"><span>‘Paint The Town Red’와 ‘Demons’.</span><span>누구도 흉내 낼 수 없는 컨셉을, 도자캣은 끝까지 살려 냅니다.</span></p>
+          <a class="dj-cap-src" href="https://youtu.be/m4_9TFeMfJE" target="_blank" rel="noopener" tabindex="-1">Paint The Town Red (Official Video) ↗</a>
+        </article>
+        <article class="dj-cap" aria-hidden="true">
+          <p class="dj-cap-no">Reason 02 — 논란 속의 기세</p>
+          <p class="dj-cap-big">논란을 <em>기세</em>로 바꾸다</p>
+          <p class="dj-cap-sub"><span>악마 숭배 논란, 그리고 팬을 향한 디스.</span><span>쏟아지는 관심마저 무대로 끌어와, 자신의 곡을 차트 1위에 올렸습니다.</span></p>
+          <a class="dj-cap-src" href="https://www.threads.com/@billboard/post/CxGIaBnOKg0" target="_blank" rel="noopener" tabindex="-1">billboard ↗</a>
+        </article>
+        <article class="dj-cap" aria-hidden="true">
+          <p class="dj-cap-no">Reason 03 — 두려움 없는 얼굴</p>
+          <p class="dj-cap-big">꾸미지 않은 얼굴이 <em>가장 대담하다</em></p>
+          <p class="dj-cap-sub"><span>민낯과 트러블을 숨기지 않는 SNS, 2023 S/S 스키아파렐리 쇼의 모습까지.</span><span>그는 패션 앞에서 외모를 기꺼이 내려놓습니다.</span></p>
+          <a class="dj-cap-src" href="https://www.allurekorea.com/2024/05/07/도자-캣은-도대체-뭘-입은거야/" target="_blank" rel="noopener" tabindex="-1">얼루어 코리아 ↗</a>
+        </article>
+      </div>
+    </div>
+
+    <div class="kb-table">
+    <div class="kb-thead" aria-hidden="true"><span>번호</span><span>이유</span><span>본 것</span><span>근거</span></div>
+    <div class="kb-rows">
+    <div class="kb-row" id="r1">
+      <a class="kb-row-in" href="https://youtu.be/m4_9TFeMfJE">
+        <span class="kb-c kb-c-no">01</span>
+        <h3 class="kb-c kb-title">도자캣만이 할 수 있는 컨셉과 음악</h3>
+        <div class="kb-c kb-c-seen">
+          <p class="kb-seen">‘Paint The Town Red’와 ‘Demons’, 두 편의 뮤직비디오에서 그는 악마라는 컨셉을 기꺼이 자기 것으로 입는다.</p>
+          <p class="kb-read">이 컨셉을 저렇게까지 살릴 수 있는 아티스트가 도자캣 말곤 무구하다</p>
+        </div>
+        <span class="kb-c kb-c-ev"><span class="kb-ev">Paint The Town Red</span></span>
+      </a>
+    </div>
+    <div class="kb-row" id="r2">
+      <a class="kb-row-in" href="https://youtu.be/sKSwRV9IIoU">
+        <span class="kb-c kb-c-no">02</span>
+        <h3 class="kb-c kb-title">논란 속에서도 기세를 끝까지 몰고 가는 태도</h3>
+        <div class="kb-c kb-c-seen">
+          <p class="kb-seen">악마 숭배 논란, 그리고 자신의 팬을 향한 디스. 한동안 그의 이름 곁에는 늘 논란이 따라붙었다.</p>
+          <p class="kb-read">사람들이 관심 가질 만한 주제를 도자캣은 잘 아는 것 같다. 논란을 오히려 이용해서 자신의 곡이 차트 1위에 오르게 한 대단한 사람이다</p>
+        </div>
+        <span class="kb-c kb-c-ev"><span class="kb-ev">그녀가 악마숭배자라 불리는 이유</span></span>
+      </a>
+    </div>
+    <div class="kb-row" id="r3">
+      <a class="kb-row-in" href="https://www.allurekorea.com/2024/05/07/도자-캣은-도대체-뭘-입은거야/">
+        <span class="kb-c kb-c-no">03</span>
+        <h3 class="kb-c kb-title">외모를 신경쓰지 않는 멋짐</h3>
+        <div class="kb-c kb-c-seen">
+          <p class="kb-seen">틱톡과 인스타그램에 올린 꾸밈없는 얼굴, 그리고 2023 S/S 스키아파렐리 오트쿠튀르 쇼 위의 그.</p>
+          <p class="kb-read">자신 얼굴의 트러블이나 민낯을 세상에 공개하는 것을 두려워하지 않고 패션을 위해서,혹은 화제성을 위해서라면 자신의 외모도 포기하고 진심으로 대할 수 있구나라는 점</p>
+        </div>
+        <span class="kb-c kb-c-ev"><span class="kb-ev">도자 캣은 도대체 뭘 입은거야?</span></span>
+      </a>
+    </div>
+    </div>
+    </div>
+  </section>
+
+  <nav class="ph-next" aria-label="다음 장"><a href="spaces.html"><small class="ph-k" aria-hidden="true">다음 →</small>Spaces</a></nav>
+</main>
+
+<!-- 하단 고정 바 — ©연도만. Email · Instagram 칸은 지움(공개 주소라 연락처를 싣지 않음 — 넣고 싶다고 말하면 넣는다) -->
+<footer class="ca-bar-b">
+  <p class="ca-gnb-c" lang="en">©2026</p>
+</footer>
+
+<script src="sig.js?v=1028l"></script>
+<script src="phamilia.js?v=1028l"></script>
+<script src="dj-mv.js?v=1028l" defer></script>
+<script src="dj-captions.js?v=1028l" defer></script>
+</body>
+</html>

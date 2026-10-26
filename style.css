@@ -485,7 +485,9 @@ main > section:last-child:not(:has(.ca-rows)) { padding-bottom: var(--ca-s2); }
 /* 3장 사진 칸 밭의 맨 오른쪽 열 — 마우스를 올리면 뜨는 공간 이름이 길어 화면 오른쪽으로 8px 넘치던 것을 칸 오른쪽 끝에 맞춰 안쪽으로 뜨게 한다(이름 글자는 그대로) */
 .ca-cell[style*="--dcs: 8"] .ca-cell-t, .ca-cell[style*="--dcs:8"] .ca-cell-t { left: auto; right: 0; }
 /* 3장 사진 칸 — 마우스를 올리면 뜨는 공간 이름이 아래·옆 사진에 가려 잘리던 것: 올린 칸을 맨 앞으로 올리고, 이름에 바탕색 띠를 깔아 사진 위에서도 읽히게 한다(학생 요청 2026-10-13) */
-.ca-field .ca-cell:hover, .ca-field .ca-cell:focus-visible, .ca-scatter.is-linking .ca-cell.is-hot { z-index: 5; }
+.ca-scatter.is-linking .ca-cell.is-hot { z-index: 5; }
+.ca-field .ca-cell:hover, .ca-field .ca-cell:focus-visible, .ca-scatter.is-linking .ca-field .ca-cell.is-hot:hover, .ca-scatter.is-linking .ca-field .ca-cell.is-hot:focus-visible { z-index: 7; }   /* 마우스를 올린 칸은 같은 공간으로 함께 밝혀진 칸(is-hot)보다도 위 — 이름이 옆 사진에 가려지지 않게(2026-10-27) */
+.ca-cell-t { z-index: 8; }
 .ca-cell-t { background: var(--ca-paper); padding: 2px 6px; }
 /* 4장 물건 카드 사진 — 4:5 칸 안에 원본 비율 그대로 다 보이게(자르지 않음). 칸 크기는 그대로라 다섯 카드의 이름 줄 높이가 맞는다(학생 요청 2026-10-13) */
 #s5 .ca-fig img, #s5 .ca-figs .ca-fig img, #s5 .ca-track.is-slide .ca-fig img { object-fit: contain; object-position: 50% 50%; }
@@ -494,3 +496,23 @@ main > section:last-child:not(:has(.ca-rows)) { padding-bottom: var(--ca-s2); }
 .ca-detail .ca-d-grid figure { flex: var(--ar, 1) 1 calc(var(--ar, 1) * var(--dh)); max-width: min(100%, calc(var(--ar, 1) * var(--dh) * 1.3)); min-width: 0; margin: 0; display: flex; flex-direction: column; }
 .ca-detail .ca-d-grid img { display: block; width: 100%; height: auto; max-width: none; max-height: none; aspect-ratio: var(--ar, auto); object-fit: contain; }
 .ca-detail .ca-d-grid figcaption { width: 0; min-width: 100%; }
+/* 첫 화면 띠 레이아웃(학생 요청 2026-10-27) — 상단 바 아래 화면 폭 가로 띠 사진, 그 아래 왼쪽 끝 작은 안내 링크 · 오른쪽 절반 큰 대표 제목. 넓은 화면에서는 메뉴도 제목과 같은 세로선(7단)에서 시작 */
+.ca-top--band { padding: calc(var(--ca-gnb-h) + var(--ca-s1)) var(--ca-gut) 0; }
+.ca-band { margin: 0; width: 100%; height: clamp(320px, 74vh, 920px); overflow: hidden; }   /* 2026-10-27 학생 요청: 사진이 더 많이 보이게 키움 */
+.ca-band img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
+.ca-band-t { display: grid; grid-template-columns: repeat(var(--ca-cols), minmax(0, 1fr)); column-gap: var(--ca-gap); align-items: end; margin-top: var(--ca-s2); }
+.ca-band-cue { grid-column: 1 / span 4; grid-row: 1; align-self: end; padding-bottom: .4em; font: var(--ca-w-body) var(--ca-lead)/1.3 var(--ca-f-body); color: inherit; text-decoration: none; }
+.ca-band-cue span { display: inline-block; transition: transform var(--ca-t-nudge) var(--ca-e2); }
+@media (hover: hover) { .ca-band-cue:hover span { transform: translateY(4px); } }
+.ca-band-t .ca-h1 { grid-column: 7 / -1; grid-row: 1; margin: 0; max-width: none; --ca-h1: clamp(34px, 5vw, 80px); --ca-h1-lh: 1.08; letter-spacing: -0.02em; }
+.ca-top--band + main > .ca-sec:first-child { margin-top: var(--ca-s3); }
+@media (min-width: 769px) {
+  .ca-gnb .ca-menu { grid-column: 7 / -1; display: flex; gap: 0 32px; }
+  .ca-gnb .ca-menu a { grid-column: auto; }
+}
+@media (max-width: 768px) {
+  .ca-band { height: auto; aspect-ratio: 3 / 4; }   /* 폰 폭: 사진 원본 비율 그대로 전체가 보이게 */
+  .ca-band-t { grid-template-columns: 1fr; row-gap: var(--ca-s2); }
+  .ca-band-t .ca-h1 { grid-column: 1; grid-row: 1; }
+  .ca-band-cue { grid-column: 1; grid-row: 2; }
+}
